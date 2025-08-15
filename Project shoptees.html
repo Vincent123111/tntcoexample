@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tees</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>  
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="popover"]').popover();
+        });
+
+        function filterTees() {
+            var input, filter, teesContainer, cards, cardTitle, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toLowerCase();
+            teesContainer = document.getElementById("teesContainer");
+            cards = teesContainer.getElementsByClassName("tee-item");
+
+            for (i = 0; i < cards.length; i++) {
+                cardTitle = cards[i].getElementsByClassName("card-title")[0];
+                txtValue = cardTitle.textContent || cardTitle.innerText;
+                if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("searchInput").addEventListener("keyup", filterTees);
+        });
+    </script>
+
+   <style>
+    .carousel-inner img 
+    {
+      width: 100%;
+      height: 600px;
+    }
+
+    .thumbnail
+    {
+        min-width: 240px;
+    }
+    .topnav a 
+    {
+        float: left;
+        color: #000000;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+    .breadcrumb a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .breadcrumb a:hover {
+        text-decoration: underline;
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .card-title {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .card-text {
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+    .dropdown-menu 
+    {
+    right: auto;
+    left: auto;
+    }
+
+  </style>
+  
+  <link rel="stylesheet" href="test.css">    
+</head>
+<body data-spy="scroll" data-target="navComp" data-offset="52">
+    <br><br><br>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-danger" id="navComp" data-spy="affix" data-offset-top="26">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="Project homepage.html">
+            <img src="tntco logo2.avif" alt="Logo" width="80" height="50" class="d-inline-block align-top">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link link-102" aria-current="page" href="Project homepage.html">𝗛𝗼𝗺𝗲</a>
+              </li>
+              <a class="nav-link link-102 dropdown-toggle active" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">𝗦𝗵𝗼𝗽</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="Project shoptees.html">𝗧𝗲𝗲𝘀</a>
+                    <a class="dropdown-item" href="Projext shopaccessories.html">𝗔𝗰𝗰𝗲𝘀𝘀𝗼𝗿𝗶𝗲𝘀</a>                  
+                </div>              
+                <li>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="nav-link link-102" href="Project signupform.html"><span class="fas fa-user"></span>𝗥𝗲𝗴𝗶𝘀𝘁𝗲𝗿</a>                        
+                        </li>
+                    </ul> 
+                </li>                           
+            </ul>
+          </div>
+        </div>
+    </nav>
+    
+    <div class="container my-5">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="Project homepage.html">Home</a></li>
+                <li class="breadcrumb-item active"><a href="Project shoptees.html">Tees</a></li>
+                <li class="breadcrumb-item active"><a href="Projext shopaccessories.html">Accessories</a></li>
+            </ol>
+        </nav>
+    <hr>
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>Tees</h2>
+            <div class="d-flex align-items-center">
+                <input type="text" id="searchInput" class="form-control me-2" placeholder="Search Tees...">
+            </div>
+        </div>
+    
+        <div class="row" id="teesContainer">
+            <div class="col-md-3 col-sm-6 mb-4 tee-item" data-name="B.A Tee (Black) 'SWAGANZ Exclusive'">
+                <div class="card">
+                    <img src="tntco tees 2.webp" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">B.A Tee (Black) "SWAGANZ Exclusive"</h5>
+                        <p class="card-text text-muted">Sold Out</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4 tee-item" data-name="Spider Prof Tee (Black)">
+                <div class="card">
+                    <img src="tntco tees 3.webp" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Spider Prof Tee (Black)</h5>
+                        <p class="card-text text-muted">Sold Out</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4 tee-item" data-name="Cover Tee (Black)">
+                <div class="card">
+                    <img src="tntco cover tee.webp" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Cover Tee (Black)</h5>
+                        <p class="card-text">RM189.00 MYR</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4 tee-item" data-name="Unmasked Tee (Black)">
+                <div class="card">
+                    <img src="Unmasked Tee (Black).webp" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Unmasked Tee (Black)</h5>
+                        <p class="card-text">RM189.00 MYR</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4 tee-item" data-name="Wedding Tee (White)">
+                <div class="card">
+                    <img src="tntco Wedding Tee (White).webp" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Wedding Tee (White)</h5>
+                        <p class="card-text">RM189.00 MYR</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4 tee-item" data-name="B.A Tee (White)">
+                <div class="card">
+                    <img src="tntco B.A Tee (White).webp" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">B.A Tee (White)</h5>
+                        <p class="card-text">RM189.00 MYR</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4 tee-item" data-name="Spidey Shirt (Beige)">
+                <div class="card">
+                    <img src="tntco Spidey Shirt (Beige).webp" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Spidey Shirt (Beige)</h5>
+                        <p class="card-text">RM289.00 MYR</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4 tee-item" data-name="Dialogue Tee (Blue)">
+                <div class="card">
+                    <img src="tntco Dialogue Tee (Blue).webp" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Dialogue Tee (Blue)</h5>
+                        <p class="card-text">RM219.00 MYR</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<br>
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item disabled"><a class="page-link" href="Project shoptees.html">Previous</a></li>
+      <li class="page-item"><a class="page-link" href="Projext shopaccessories.html">Next</a></li>
+    </ul>
+</nav>
+<div>
+    <section class="">
+      <footer class="bg-body-tertiary text-light" style="background-color: #000000;">
+        <div class="container p-4">        
+          <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h4 class="text-uppercase">𝕮𝖔𝖓𝖓𝖊𝖈𝖙</h4>
+    
+              <ul class="list-unstyled mb-0">
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                    </svg>
+                  <a href="https://www.facebook.com/" class="text-body" style="color:#fff !important;">Facebook</a>
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                    </svg>
+                  <a href="https://www.instagram.com/" class="text-body" style="color:#fff !important;">Instragram</a>
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                        <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+                    </svg>
+                  <a href="https://www.youtube.com/" class="text-body" style="color:#fff !important;">YouTube</a>
+                </li>
+              </ul>
+            </div>
+        </div>
+      </footer>
+    </section>
+</div>
+</body>
+</html>
